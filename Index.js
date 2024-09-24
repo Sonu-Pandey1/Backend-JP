@@ -4,6 +4,7 @@ const usersRouter  = require("./Routers/users-Router")
 const connectDB = require("./utils/db")
 const errorMiddleware = require("./middlewares/error-middleware")
 const contactRouter = require("./Routers/contact-Router")
+const userDashboardRouter = require("./Routers/user-Dashboard")
 const cors = require("cors")
 
 
@@ -25,7 +26,8 @@ app.use(express.json());
 // routes are rendering here 
 app.use("/api/auth",authRouter);
 app.use("/api/form",contactRouter);
-app.use("/api/users",usersRouter)
+app.use("/api/users",usersRouter);
+app.use("/api/userDashboard",userDashboardRouter);
 
 // error middleware
 app.use(errorMiddleware);
