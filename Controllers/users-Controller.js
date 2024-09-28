@@ -21,6 +21,35 @@ const candidate = async (req, res) => {
     }
 }
 
+const Rcandidate = async (req,res) =>{
+    try {
+        const {name,email,location,skills,about,img,exprience} = req.body
+
+        const data  = await Candidate.create({name,email,location,skills,about,img,exprience});
+        console.log(data)
+        res.status(200).json({message:"candidate created successfully",data})
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+}
+
+const candidateD =  async (req,res) =>{
+    try {
+        const {_id} = req.body
+        console.log(req.body)
+
+        const data  = await Candidate.findByIdAndDelete({_id});
+        console.log(data)
+        res.status(200).json({message:"candidate deleted successfully",data})
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+}
+
 const company =async (req,res) =>{
    
     try {
@@ -63,4 +92,4 @@ const jobs = async (req,res) =>{
     }
 }
 
-module.exports = {candidate,company,jobs};
+module.exports = {candidate,company,jobs,Rcandidate,candidateD};

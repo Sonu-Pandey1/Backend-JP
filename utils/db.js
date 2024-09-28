@@ -18,3 +18,5 @@ const connectDB = async ()=>{
 }
 
 module.exports = connectDB;
+
+// mongodb+srv://sonupandey:Sonu%40123@cluster1.geai8.mongodb.net/todoAppMERN?retryWrites=true&w=majority
