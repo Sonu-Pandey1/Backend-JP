@@ -22,6 +22,11 @@ let PORT = 5000
 
 
 app.use(express.json());
+// testing url
+app.use("/",(req,res)=>{
+    // console.log(res)
+    res.send("jay shree ram ")
+})
 
 // routes are rendering here 
 app.use("/api/auth",authRouter);
